@@ -18,6 +18,6 @@ Here are some ideas to get you started:
 </div>
 
 <div>
-<a href="https://github.com/seu-usuário-aqui">
+<a href="https://github.com/Pedrohsmarinho">
 <img loading="lazy" height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Pedrohsmarinho&layout=compact&langs_count=7&theme=dracula"/>
 </div>
