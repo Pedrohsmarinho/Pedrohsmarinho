@@ -1,256 +1,93 @@
-# Desafio Técnico — Gestão de Pedidos (Claro)
+<h1 align="center">👋 Olá! Seja bem-vindo(a) ao meu GitHub</h1>
+<h3 align="center">Pedro Marinho — Desenvolvedor Fullstack</h3>
 
-Sistema de gestão de pedidos de e-commerce: API REST em Spring Boot + SPA em
-Angular, com observabilidade completa (métricas, logs e traces — Prometheus,
-Loki e Tempo, visualizados no Grafana) como diferencial.
+---
 
-## Estrutura do repositório
+## 📝 Resumo Profissional
 
-```
-/backend    -> Spring Boot 3.x (Java 17+), API REST + MariaDB
-/frontend   -> Angular 17 (standalone components)
-/monitoring -> configs de Prometheus/Loki/Promtail/Tempo + dashboards do Grafana
-/postman    -> collection + environment do Postman e script de curl
-docker-compose.yml
-CONTRIBUTING.md -> fluxo de branches (Gitflow) e Conventional Commits
-```
+Desenvolvedor Fullstack com 4 anos de experiência, especializado em Node.js (NestJS, Express, AdonisJS), TypeScript, React e Angular. Ampla experiência em arquitetura de sistemas, APIs REST, mensageria com RabbitMQ, cache com Redis e infraestrutura cloud com AWS e Docker. Atuação em aplicações de missão crítica nos setores financeiro e saúde, com foco em otimização de performance, pipelines CI/CD e observabilidade (Prometheus, AWS CloudWatch).
 
-## Como executar
+---
 
-### Via Docker Compose (recomendado)
+## 🛠️ Principais Competências
 
-```bash
-cp .env.example .env
-# edite o .env e defina JWT_SECRET com um valor aleatório, ex:
-openssl rand -base64 48
+- **Linguagens:** JavaScript, TypeScript, PHP, Java, .NET
+- **Back-end:** Node.js, NestJS, Express, AdonisJS, REST APIs  
+- **Front-end:** Angular, React, HTML, CSS  
+- **Bancos de Dados:** PostgreSQL, MySQL, Redis, Prisma ORM  
+- **Cloud & DevOps:** AWS (S3, ECS, CloudWatch), Docker, CI/CD  
+- **Outros:** RabbitMQ, Prometheus, Clean Architecture, Design Patterns, Testes Automatizados, Git
 
-docker compose up --build -d
-```
+---
 
-Um único comando sobe tudo: backend, frontend, MariaDB e a stack completa de
-observabilidade (Prometheus + Loki + Tempo + Grafana, o "LGTM stack"). O
-backend só inicia depois que o MariaDB reporta saudável (`service_healthy`).
+## 💼 Experiência Profissional
 
-Para começar do zero (apaga também os volumes de dados):
-```bash
-docker compose down -v && docker compose up --build -d
-```
+**Desenvolvedor Fullstack | Amigo Tech**  
+<em>Set/2023 – Fev/2026 • Recife, PE</em>
+- Suporte Nível 3 em sistemas críticos, investigação de bugs complexos e gargalos de performance.
+- Desenvolvimento de APIs escaláveis com Node.js/Express; cache com Redis para reduzir latência.
+- Módulos de estoque com RabbitMQ (processamento assíncrono/desacoplado).
+- Automação de deploys via pipelines CI/CD em Docker; monitoramento com AWS Metrics & Prometheus.
 
-| Serviço | URL |
-|---|---|
-| Frontend | http://localhost:4200 |
-| Backend | http://localhost:8080 |
-| Swagger UI | http://localhost:8080/swagger-ui/index.html |
-| Prometheus | http://localhost:9090 |
-| Grafana | http://localhost:3000 (usuário `admin`, senha `admin`) |
-| MariaDB | `localhost:3307` (usuário `pedidos_user`, senha `pedidos_pass`, banco `pedidos_db`) |
+**Desenvolvedor Fullstack | Ustore (Claro)**  
+<em>Jan/2024 – Set/2024 • Recife, PE (Híbrido)</em>
+- Atuação fullstack usando AdonisJS/JavaScript nas fases do ciclo de desenvolvimento.
+- Módulos de gerenciamento de custos e controle financeiro para clientes enterprise.
+- Integração de MySQL e criação de interfaces dinâmicas/responsivas (AngularJS).
+- Integração de serviços AWS garantindo performance e alta disponibilidade.
 
-Um dashboard **"Pedidos API - Visão Geral e Saúde"** já vem provisionado no
-Grafana, reunindo cards de negócio, saúde da API (`up`), métricas técnicas
-(requisições/s, latência, erros 4xx/5xx) e um painel de logs em tempo real.
-Cada log carrega `traceId`/`spanId`, correlacionado automaticamente com o
-Tempo (logs ↔ traces nos dois sentidos).
+**Estagiário Desenvolvedor Fullstack | Ustore**  
+<em>Mar/2023 – Jan/2024 • Recife, PE (Remoto)</em>
+- Aplicações escaláveis com AdonisJS/TypeScript.
+- Estruturação e modelagem de bancos MySQL priorizando performance.
+- Componentes responsivos em AngularJS com foco em UX.
+- Participação em squads ágeis, entrega de módulos de alta performance.
 
-### Local, sem Docker
+---
 
-Backend: requer um MariaDB em `localhost:3306` (schema/usuário no README
-completo ou no `docker-compose.yml`).
-```bash
-cd backend
-./mvnw spring-boot:run -Dspring-boot.run.profiles=local
-```
-Frontend:
-```bash
-cd frontend
-npm install
-npm start
-```
+## 🌟 Projetos Relevantes
 
-A API sobe em `http://localhost:8080`, o frontend em `http://localhost:4200`.
-O schema e o seed inicial (3 pedidos) são criados automaticamente pelo
-`DataSeeder` na primeira subida. O fluxo normal é criar sua própria conta em
-`http://localhost:4200` (seletor "Criar conta" — nome, email, senha mínima
-de 8 caracteres), com login automático após o cadastro.
+- **AgendaSistema:** [Repositório no GitHub](https://github.com/Pedrohsmarinho/agenda) — Sistema completo de gerenciamento de contatos (agenda), desenvolvido com .NET 8 no backend e Vue.js 3 no frontend, implementando Clean Architecture, CQRS, autenticação JWT e mensageria com RabbitMQ.
+- **Ecommerce:** [Repositório no GitHub](https://github.com/Pedrohsmarinho/Ecommerce) — Plataforma de e-commerce desenvolvida com NestJS no backend e React no frontend. Recursos incluem autenticação JWT, painel administrativo, integração com gateways de pagamento, uploads no AWS S3, filas com RabbitMQ e arquitetura baseada em microsserviços.
+- **Riquinho App:** [Repositório no GitHub](https://github.com/fernnandez/riquinho-app) — Sistema para controle financeiro pessoal, focado em organização de receitas, despesas e categorias, dashboards interativos e visualização de saldo/fluxo. Utiliza tecnologias modernas do ecossistema JavaScript, priorizando UX e responsividade.
+- **Water Control:** [Repositório no GitHub](https://github.com/fernnandez/water-control) — Sistema de automação residencial para monitoramento e controle de nível de água em reservatórios utilizando sensores IoT e dashboards. Integra hardware (microcontroladores e sensores) com backend Node.js e frontend React, com notificações em tempo real, automações configuráveis e interface intuitiva para acompanhamento de consumo.
 
-## Modelo de domínio — Pedido
+---
 
-| Campo         | Tipo               | Observação                               |
-|---------------|--------------------|-------------------------------------------|
-| `id`          | Long               | gerado pelo banco                          |
-| `displayName` | String             | nome do cliente/pedido                     |
-| `itens`       | Integer            | quantidade de itens                        |
-| `peso`        | Long               | **armazenado sempre em gramas**            |
-| `status`      | enum StatusPedido  | `EM_PROCESSAMENTO`, `PAUSADO`, `CANCELADO` |
+## 🚀 Tecnologias que domino/estudo
 
-O frontend converte a exibição para kg e converte de volta para gramas antes
-do `POST` (input do usuário em kg, mais natural para e-commerce).
+<p align="center">
+  <img alt="Node.js" title="Node.js" height="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-plain.svg" />&nbsp;
+  <img alt="NestJS" title="NestJS" height="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg" />&nbsp;
+  <img alt="Express" title="Express" height="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" />&nbsp;
+  <img alt="AdonisJS" title="AdonisJS" height="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/adonisjs/adonisjs-original.svg" />&nbsp;
+  <img alt="TypeScript" title="TypeScript" height="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" />&nbsp;
+  <img alt="React" title="React" height="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" />&nbsp;
+  <img alt="Angular" title="Angular" height="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg" />&nbsp;
+  <img alt="Docker" title="Docker" height="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" />&nbsp;
+  <img alt="AWS" title="Amazon Web Services" height="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" />&nbsp;
+  <img alt="PostgreSQL" title="PostgreSQL" height="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" />&nbsp;
+  <img alt="MySQL" title="MySQL" height="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" />&nbsp;
+  <img alt="Redis" title="Redis" height="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg" />&nbsp;
+  <img alt="RabbitMQ" title="RabbitMQ" height="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rabbitmq/rabbitmq-original.svg" />&nbsp;
+  <img alt="Java" title="Java" height="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" />&nbsp;
+  <img alt=".NET" title=".NET" height="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dot-net/dot-net-original.svg" />&nbsp;
+</p>
 
-**Transições de status válidas** (`StatusPedido.podeTransicionarPara`):
-```
-EM_PROCESSAMENTO -> PAUSADO / CANCELADO
-PAUSADO          -> CANCELADO / EM_PROCESSAMENTO
-CANCELADO        -> EM_PROCESSAMENTO
-```
-Qualquer transição fora dessa tabela retorna `422`.
+---
 
-**Limite de negócio**: máximo de 5 pedidos simultâneos **por usuário** (não
-global) — decisão tomada ao evoluir o desafio original (single-tenant) para
-multiusuário. Tentativas acima do limite retornam `422` e ficam logadas em
-`WARN`.
+## 📊 Estatísticas do GitHub
 
-## Contrato da API
+<p align="center">
+  <img height="180em" src="https://github-readme-stats.vercel.app/api/?username=Pedrohsmarinho&show_icons=true&theme=dracula&hide_border=true&include_all_commits=true&count_private=true" />
+  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Pedrohsmarinho&layout=compact&langs_count=7&theme=dracula&hide_border=true" />
+</p>
 
-| Método | Endpoint                    | Descrição                              | Auth | Sucesso | Erros |
-|--------|------------------------------|-----------------------------------------|------|---------|-------|
-| POST   | `/api/auth/login`            | Autentica o usuário, retorna JWT        | não  | 200     | 400, 401 |
-| POST   | `/api/auth/registrar`        | Cadastra um usuário, já retorna JWT     | não  | 201     | 400, 409 |
-| GET    | `/api/pedidos`               | Lista os pedidos do usuário autenticado | sim  | 200     | 401 |
-| POST   | `/api/pedidos`               | Cadastra um novo pedido                 | sim  | 201     | 400, 401, 422 |
-| PATCH  | `/api/pedidos/{id}/status`   | Altera o status de um pedido            | sim  | 200     | 400, 401, 404, 422 |
-| DELETE | `/api/pedidos/{id}`          | Exclui um pedido                        | sim  | 204     | 401, 404 |
+---
 
-CORS habilitado apenas para `http://localhost:4200`. Documentação interativa
-via Swagger UI (`springdoc-openapi`), gerada automaticamente dos controllers.
+## 🔗 Contato
 
-**Multi-tenant**: todas as rotas de `/api/pedidos/**` operam exclusivamente
-sobre os pedidos do usuário do token (nunca a partir de um `usuarioId` do
-corpo/path/query), fechando uma falha de autorização do tipo IDOR. Um `id`
-de pedido de outro usuário retorna `404` (não `403`), para não vazar a
-existência do recurso a quem está tentando o ataque.
-
-## Observabilidade
-
-- **Prometheus**: métricas técnicas padrão + métricas de negócio customizadas
-  (`pedidos_total` como Counter cumulativo, `pedidos_by_status`,
-  `pedidos_peso_total_gramas`, `pedidos_itens` como Gauges) — todas globais
-  (somam todos os usuários), usadas para saúde/uso agregado do sistema.
-- **Tracing** (Micrometer + OTLP → Tempo): não estava nos requisitos, mas
-  fecha o tripé métricas + logs + traces, respondendo *por quê* uma
-  requisição específica falhou ou foi lenta — sem atrasar o restante do
-  escopo obrigatório.
-- **Logs** (Promtail → Loki), correlacionados com os traces via `traceId`.
-
-Duas armadilhas de configuração documentadas no histórico: o Tempo v3 mudou
-o schema de `ingester`/`compactor` para "live-store"; e o volume do Grafana
-precisou ser recriado (`down -v`) ao adicionar Loki/Tempo depois do
-Prometheus já estar rodando.
-
-## Decisões técnicas — Backend
-
-- **Java 17 / Spring Boot 3.5**, **MariaDB** como banco principal (H2 só em
-  testes) — o enunciado aceitava H2 em memória, mas foi pedida persistência
-  real.
-- **Regra de transição de status no enum** `StatusPedido`, não no service —
-  mantém a regra de negócio junto ao domínio.
-- **Exceções de negócio dedicadas** + `@RestControllerAdvice` centralizando
-  o mapeamento para os códigos HTTP exigidos, cobrindo inclusive exceções
-  técnicas do Spring que sem handler cairiam em 500.
-- **Evolução para multiusuário + JWT completo**: entidade `Usuario` (senha
-  com hash BCrypt), cadastro via `POST /api/auth/registrar` com login
-  automático (retorna JWT), e `POST /api/auth/login` retornando um JWT real.
-- **Senha**: mínimo de 8 caracteres (sem exigir maiúscula/número/símbolo),
-  combinado com BCrypt.
-- **JWT** (`io.jsonwebtoken`, HS256, expiração de 1h): payload só com `sub`
-  e `exp`. O secret vem de `JWT_SECRET` sem default no profile principal —
-  a aplicação falha na subida se não for definido.
-- **Autorização por usuário** em todos os métodos de `PedidoService`
-  (`usuarioId` explícito, nunca lido do request).
-- **Peso sempre em gramas na API**, conversão para kg só na apresentação.
-- **Logs estruturados** via SLF4J/Logback (`INFO`/`WARN`/`ERROR` conforme o
-  cenário).
-- **Testes**: 83 testes JUnit no total (transições de status, isolamento
-  entre usuários, autenticação, segurança via contexto Spring completo,
-  busca/paginação, dashboard, validação e cenários de erro/exceção).
-
-### Cobertura de código (JaCoCo)
-
-Sem threshold mínimo configurado ainda (decisão deliberada de olhar o número
-real antes de travar uma meta). Evoluiu de **92.8%** (44 testes, caminho
-feliz) para **99.4% de linhas** (65 testes, com cenários de erro completos).
-Dois gaps reais foram corrigidos no código ao escrever esses testes: rota
-inexistente retornava `500` em vez de `404` (`NoResourceFoundException` sem
-handler), e corpo malformado (ex. `"peso": "abc"`) retornava `500` em vez de
-`400` (`HttpMessageNotReadableException` sem handler).
-
-## Decisões técnicas — Frontend
-
-- **Standalone components** (sem NgModules), padrão recomendado a partir do
-  Angular 17.
-- **Angular Material** para formulários, tabela, cards e diálogos; **ng2-
-  charts + Chart.js** para os gráficos do dashboard.
-- **Fallback em LocalStorage**: se o `POST` falhar por indisponibilidade da
-  API (status `0`, não erro de negócio), o pedido é salvo localmente e
-  mesclado na listagem/dashboard até a API voltar.
-- **Peso digitado em kg**, convertido para gramas antes do envio.
-- **Login e cadastro na mesma tela**, alternando via `mat-button-toggle-
-  group`.
-- **Token em `sessionStorage`** (não `localStorage`), para reduzir a janela
-  de exposição — um cookie `httpOnly` seria mais seguro, mas exigiria mudar
-  o fluxo de CORS/CSRF, fora do escopo aqui.
-- **`authGuard`/`authInterceptor` funcionais** (padrão Angular 17):
-  verificam expiração do token localmente e reagem a `401` do backend.
-- **Identidade visual**: paleta da marca Claro (vermelho `#e4002b` +
-  branco/cinza), tipografia Manrope, cores de status como variáveis CSS
-  próprias.
-- **Dashboard consome `GET /api/dashboard/metricas`** (query autoritativa no
-  backend, escopada por usuário) em vez de recontar a lista no navegador ou
-  ler direto do `MeterRegistry` (que é global e cumulativo, não serve para
-  "quantos pedidos esse usuário tem agora").
-- **Estados vazio/carregando/API indisponível** tratados explicitamente em
-  vez de mostrar uma tabela vazia sem explicação.
-- **Indicador de saúde da API** na toolbar (polling a cada 30s em
-  `/actuator/health`), separado do aviso de fallback local da listagem.
-- **Filtro, busca, paginação e ordenação resolvidos no backend**
-  (`/api/pedidos/busca`), com debounce de 300ms na busca por nome.
-- **Polling do dashboard a cada 20s**, complementando o Observable
-  compartilhado (cobre mudanças vindas de outra aba/dispositivo).
-- **CSS em `rem`** (não `px`) para espaçamento/tipografia/larguras-teto,
-  garantindo escala com zoom/fonte do navegador; `px` mantido só para
-  detalhes puramente visuais (bordas, sombras, raios).
-- **Correções de UX/responsividade**: toolbar quebrando em telas estreitas
-  e tabela "empurrando" a página no mobile — ambos corrigidos.
-- **`package-lock.json` não versionado**: mitigado fixando versões exatas
-  (sem `^`/`~`) em todas as dependências do `package.json`.
-- **Testes**: 71 testes Jasmine/Karma cobrindo transição de status,
-  fallback local, guard/interceptor, serviços de auth/dashboard/health,
-  busca/paginação e os fluxos de login/cadastro/pedido.
-
-### Revisão de qualidade (code review)
-
-Duas convenções estabelecidas: `extrairMensagemErro()` (utilitário único
-para mensagens de erro HTTP, usado nas telas que antes reimplementavam a
-mesma lógica) e `PedidoService.limiteMaximo$` (fonte única do limite de
-pedidos no frontend, populada via API em vez de uma constante estática
-desatualizável). Também corrigido: `id` não numérico em rotas de pedido
-retornava `500` em vez de `400`/`405`.
-
-## Validação realizada
-
-- **Backend**: bateria de `curl` cobrindo login, registro, CRUD de pedidos,
-  limites e autorização; 83 testes JUnit rodando contra H2, com 100% de
-  linhas cobertas no `GlobalExceptionHandler`.
-- **Frontend**: `ng build` sem erros; 71 testes Jasmine/Karma.
-- **Visual**: screenshots reais (Chrome headless) em 1440px e 390px,
-  usados para validar as correções de responsividade.
-
-**Recomendação**: mesmo assim, antes de considerar o fluxo 100% validado,
-percorra manualmente login/cadastro → dashboard → listagem → cadastro de
-pedido → mudança de status → exclusão → logout.
-
-## O que eu faria diferente com mais tempo
-
-- **Refresh token** (com rotação/revogação), evitando reautenticação a cada
-  1h sem aumentar a janela de exposição do token.
-- **Verificação de email** no cadastro.
-- **Cache** em `UsuarioRepository.findByEmailIgnoreCase` e em
-  `/api/dashboard/metricas` (não feito agora por não se justificar no
-  volume deste desafio).
-- **Testes end-to-end de verdade** (Cypress/Playwright), em vez de apenas
-  unitários + validação visual manual.
-- **CI configurado** (GitHub Actions) rodando os testes e o build do Docker
-  a cada push/PR.
-- **Internacionalização (i18n)** — hoje todo texto está hardcoded em
-  português.
-- **Guia de acessibilidade**: faltam `aria-label`s nos botões de ação da
-  listagem e um audit de contraste mais completo.
-- **Prints/GIF da aplicação e do dashboard Grafana no README.**
+<p align="center">
+  <a href="mailto:pedrohsmarinho@outlook.com"><img alt="Email" src="https://img.shields.io/badge/-Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>&nbsp;
+  <a href="https://github.com/Pedrohsmarinho"><img alt="GitHub" src="https://img.shields.io/badge/-GitHub-181717?style=for-the-badge&logo=github&logoColor=white" /></a>
+</p>
